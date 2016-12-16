@@ -1,0 +1,25 @@
+.idea/*
+
+/config/database.yml
+/config/local_env.yml
+/db/schema.rb
+/log/*
+/Gemfile.lock
+tmp/
+
+## Environment normalisation:
+/.bundle
+/vendor/bundle
+
+/spec/tmp
+/.idea/*
+vendor/cache/
+
+public/uploads/**
+public/audio/**
+public/robots.txt
+config/database.yml
+config/secrets.yml
+public/javascripts/*
+public/images/*
+public/assets/*
