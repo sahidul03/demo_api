@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+
   # mount_devise_token_auth_for 'User', at: 'auth'
 
 
@@ -11,6 +14,15 @@ Rails.application.routes.draw do
     scope module: :v1 do
       resources :users
       resources :cars
+      resources :trades
+      resources :levels
+      resources :syllabuses do
+        collection do
+          get "new"
+        end
+      end
+      resources :languages
+      resources :syllabus_languages
     end
   end
 

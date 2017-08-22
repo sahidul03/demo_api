@@ -1,5 +1,5 @@
 class Api::V1::CarsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   # after_action :allow_cross_domain_access
 
   def index
@@ -14,6 +14,7 @@ class Api::V1::CarsController < ApplicationController
 
   def create
     car = Car.new(params_car)
+    raise params[:car][:photo][:uploadFile].inspect
     if car.save
       render json: car, status: :created
     else
