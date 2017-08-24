@@ -26,7 +26,7 @@ class Api::V1::SyllabusesController < ApplicationController
     @syllabus = Syllabus.new(syllabus_params)
 
     if @syllabus.save
-      render json: @syllabus, status: :created, location: @syllabus
+      render json: @syllabus, status: :created
     else
       render json: @syllabus.errors, status: :unprocessable_entity
     end
