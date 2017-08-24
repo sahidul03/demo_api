@@ -24,8 +24,10 @@ class Api::V1::SyllabusesController < ApplicationController
   # POST /syllabuses
   def create
     @syllabus = Syllabus.new(syllabus_params)
-
     if @syllabus.save
+      params[:syllabus][:languages].each do |language|
+        @syllabus.syllabus_languages.create(language_id: language)
+      end if params[:syllabus][:languages].any?
       render json: @syllabus, status: :created
     else
       render json: @syllabus.errors, status: :unprocessable_entity
